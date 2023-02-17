@@ -1,0 +1,97 @@
+% erk.sty
+% style file for latex2e papers
+
+\pagestyle{empty}
+\twocolumn
+\columnsep 5mm
+\columnseprule 0pt
+
+\def\@oddhead{}\def\@evenhead{}
+
+\def\maketitle
+  {\par
+    \begingroup
+      \def\thefootnote
+        {\fnsymbol
+          {footnote}
+        }
+      \def\@makefnmark{\hbox to 0pt{$^{\@thefnmark}$\hss}}
+      \twocolumn[\@maketitle]
+      \@thanks
+    \endgroup
+    \setcounter{footnote}{0}
+    \let\maketitle\relax
+    \let\@maketitle\relax
+    \gdef\@thanks{}\gdef\@author{}
+    \gdef\@title{}\let\thanks\relax
+  }
+
+\def\@maketitle
+  {
+  \vbox to 6cm
+    {\hsize\textwidth
+     \linewidth\hsize \vfil \centering
+       {\LARGE \bf \@title \par}
+       \vskip 2em
+       {
+       \large \bf \begin {tabular}[t]{c} \@author \end{tabular}
+       \par
+       }
+       \vskip .5em
+       {
+       \normalsize \textit{ \begin {tabular}[t]{c} \@affiliation \end{tabular}}
+       \par
+       }
+       \ifx \@empty \@email
+       \else \textit { \begin {tabular}[t]{c} \@email \end{tabular}}       
+       \fi  
+     \vfil
+    }
+  }
+
+
+\def\affiliation#1{\gdef\@affiliation{#1}} \gdef\@affiliation{}
+\def\email#1{\def\@email{#1}}
+\def\@email{}
+
+\def\abstract#1{\selectlanguage{english}
+ \begin{center}{\large \bf {#1}\vspace{-.5em}\vspace{0pt}}
+ \end{center}
+ \it
+ \parindent 1em
+ }
+ 
+\def\endabstract{\par}
+
+\def\section{\@startsection {section}{1}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {1.5ex \@plus.2ex}%
+                                   {\large\bf}}
+
+
+\def\subsection{\@startsection {subsection}{2}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {.5ex \@plus.2ex}%
+                                   {\normalsize\bf}}
+
+
+\def\subsubsection{\@startsection {subsubsection}{2}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {.5ex \@plus.2ex}%
+                                   {\normalsize\em}}
+
+
+% Different font in captions
+\newcommand{\captionfonts}{\small}
+
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
