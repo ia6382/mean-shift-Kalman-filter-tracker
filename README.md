@@ -1,6 +1,6 @@
 # mean-shift-Kalman-filter-tracker
 
-We implemented a mean-shift tracking algorithm and in order to improve its performance we combined it with the Kalman Filter. 
+A MATLAB implementation of a mean-shift tracking algorithm combined it with the Kalman Filter in order to improve its performance. 
 
 Mean-shift localizes the target by finding the coloured histogram of the region that has the best match to the target's histogram. It works reasonably well in most cases but can fail when the target is partially or fully hidden behind an obstacle or by a visually similar object. 
 Kalman Filter uses recursive Bayesian estimation to combine the measurement (obtained by the detector) with the prediction (obtained with the dynamic model) and produce a better estimation of the target's location, as seen in the gif below.
