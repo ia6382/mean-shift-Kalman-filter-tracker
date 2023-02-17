@@ -11,7 +11,7 @@ Red circle represents the variance or uncertainty of the measurement, blue circl
 **This gif represents the debug view of the tracker. During real case tracking, the circles are not drawn and the video is not playing so slowly, frame-by-frame.*
 
 Testing our solution with several dynamic models (random walk, near constant velocity, near constant acceleration) showed improvement in specific scenarios. The near constant acceleration model proved most successful.
-Testing was done with the Tracking Evaluation Toolkit provided in the repository and [VOT sequences](http://www.votchallenge.net/challenges.html).
+Testing was done with the [Tracking Evaluation Toolkit](https://github.com/alanlukezic/tracking-toolkit-lite) and [VOT sequences](http://www.votchallenge.net/challenges.html).
 
 File porocilo.pdf contains the derivation of the Kalman filter and an extensive testing report in the Slovenian language.
 This project was a personal assignment for the Advanced Topics in Computer Vision course at the University of Ljubljana, Faculty of Computer and Information Science. 
