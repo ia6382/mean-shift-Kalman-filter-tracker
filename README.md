@@ -1,4 +1,4 @@
-# mean-shift-Kalman-filter-tracker
+# Mean-shift Kalman Filter Tracker
 
 A MATLAB implementation of a mean-shift tracking algorithm combined it with the Kalman filter in order to improve its performance. 
 
@@ -15,3 +15,6 @@ Testing was done with the [Tracking Evaluation Toolkit](https://github.com/alanl
 
 File porocilo.pdf contains the derivation of the Kalman filter and an extensive testing report in the Slovenian language.
 This project was a personal assignment for the Advanced Topics in Computer Vision course at the University of Ljubljana, Faculty of Computer and Information Science. 
+
+---
+Run the tracker with the *demo_tracker.m* where you can also specifiy the testing sequence. Changing the dynamic model is possible within the *ms_initialize.m* file.
